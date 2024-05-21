@@ -1,0 +1,190 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+:root {
+    --bg-img: url('../img/bg-mobile.jpg');
+    --font-color: #FFF;
+    --stroke-color: #FFFFFF80;
+    --surface-color: #FFFFFF1A;
+    --surface-hover-color: #FFFFFF0D;
+    --highlight-color: #FFFFFF33;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+}
+
+html, body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+}
+
+body {
+    background: fixed var(--bg-img) no-repeat;
+    background-size: cover;
+    color: var(--font-color);
+}
+
+body[data-theme=dark] {
+    --bg-img: url('../img/bg-mobile.jpg');
+    --font-color: #FFF;
+    --stroke-color: #FFFFFF80;
+    --surface-color: #FFFFFF1A;
+    --surface-hover-color: #FFFFFF0D;
+    --highlight-color: #FFFFFF33;
+}
+
+body[data-theme=light] {
+    --bg-img: url('../img/bg-mobile-light.jpg');
+    --font-color: black;
+    --stroke-color: #00000080;
+    --surface-color: #0000000D;
+    --surface-hover-color: #00000005;
+    --highlight-color: #0000001A;
+}
+
+header, main, footer {
+    padding: 24px;
+}
+
+.text-md {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 600;
+}
+
+.text-sm {
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: normal;
+}
+
+.content {
+    width: 600px;
+    max-width: 600px;
+    min-width: 320px;
+    min-height: 500px;
+    margin: auto;
+}
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#profile-image {
+    text-align: center;
+    padding: 24px;
+}
+
+#profile-image img {
+    width: 120px;
+    height: 120px;
+    border-radius: 100%;
+    border: solid 2px var(--stroke-color);
+}
+
+.custom-swith {
+    display: inline-block;
+    position: relative;
+    width: 50px;
+    height: 25px;
+    border-radius: 100px;
+    background-color: var(--surface-color);
+    border: solid 2px var(--stroke-color);
+    filter: blur(8);
+    user-select: none;
+}
+.custom-swith input {
+    display: none;
+}
+.custom-swith span {
+    display: inline-block;
+    position: absolute;
+    top: -2px;
+    left: calc(25px / -2);
+    height: 25px;
+    width: 25px;
+    border-radius: 100%;
+    transform: scale(1.33);
+    transition: left 175ms ease-in-out;
+    background: white url('../img/moon-stars.svg') center no-repeat;
+    background-size: 50%;
+}
+.custom-swith span:hover {
+    outline: var(--surface-hover-color) solid 8px;
+}
+.custom-swith input:checked + span {
+    left: calc(100% - (25px / 2));
+    background-image: url('../img/sun.svg');
+}
+
+.list-of-links {
+    list-style: none;
+    width: 100%;
+    padding: 24px;
+}
+.list-of-links li:not(:last-child) {
+    margin-bottom: 16px;
+}
+.list-of-links li a {
+    display: inline-block;
+    padding: 16px;
+    width: 100%;
+    text-decoration: none;
+    color: var(--font-color);
+    border: solid var(--stroke-color) 1px;
+    background-color: var(--surface-color);
+    border-radius: 8px;
+    filter: blur(8);
+    text-align: center;
+}
+.list-of-links li a:hover {
+    background-color: var(--surface-hover-color);
+    outline: var(--font-color) solid 1px;
+}
+
+
+.list-of-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    width: 100%;
+    padding: 24px;
+}
+.list-of-icons li:not(:last-child) {
+    margin-right: 16px;
+}
+.list-of-icons li a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 9999px;
+    padding: 16px;
+    font-size: 32px;
+    color: var(--font-color);
+    background-color: transparent;
+}
+
+.list-of-icons li a:hover {
+    background-color: var(--surface-hover-color);
+}
+
+
+
+
+
+
+@media (min-width: 1024px) {
+    body[data-theme=dark] {
+        --bg-img: url('../img/bg-desktop.jpg');
+    }
+    body[data-theme=light] {
+        --bg-img: url('../img/bg-desktop-light.jpg');
+    }
+}
